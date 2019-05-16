@@ -132,7 +132,7 @@ $(document).ready(function(){
 
 <div class="row">
     <div class="col-md-12 text-center">
-        <h1>Bienvenidos a...</h1>
+        <h1>Bienvenidos a...putoss</h1>
     </div>
 </div>
 <br>
