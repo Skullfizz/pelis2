@@ -1,0 +1,63 @@
+html,
+body,
+.container, 
+.dark{
+    background-attachment: fixed;
+    background-color: darkgrey
+}
+.lcolor{
+    color: whitesmoke;
+    size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+.center{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+  }
+
+.container{
+    height: 100%;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .contenedor{
+    height: 100%;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+.imagen{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+    border-top: 35px;
+  }
+  .title{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  
+  .footer > div {
+    background-color: rgba(59, 59, 50, 0);
+    min-width: 300px;
+  }
+  .Peliculas{
+    height: 100%;
+    display: flex;
+    background-attachment: fixed;
+    background-color: rgb(197, 197, 24);
+    justify-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
