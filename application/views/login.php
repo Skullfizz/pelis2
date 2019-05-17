@@ -8,6 +8,39 @@
     <link rel="stylesheet" href="<?=base_url()?>static/css/flat-ui.min.css">
     <link rel="stylesheet" href="<?=base_url()?>static/css/mi.css">
 	<script src="<?=base_url()?>static/js/vendor/jquery.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+      $(".Registrar").on("click",function(e){
+          var $this = $(this);
+          var user = $this.data("usuario");
+          var pass = $this.data("contra");
+          var flag = $this.data('flag');
+          $.ajax({
+                  type:'POST',
+                  url:"agregarusu",
+                  data:{
+                      "usuario":user,
+                      "contra":pass
+                  },
+              complete:function(){
+                location.reload();
+              },
+              success:function(data){
+                  alert('usuario registrado');
+                  
+                  //$("#span_1").addClass("prueba");
+              },
+              error:function(jqxhr){
+                  alert('usuario no registrado');
+                // $("#span_1").addClass("pruebae");
+              },
+              }
+              );
+      })
+  });
+</script>
+
+
     <title>Login pelis 24</title>
 </head>
 <body>
@@ -32,11 +65,19 @@
         </div>
         <div>
             <input class="btn btn-lg btn-primary btn-block" type="submit" value="Ingresar" name="logeate">
-            <a Class="lcolor" href="">Sign Up For Free</a>
+            <a Class="lcolor" href="index.php/login/ver">Sign Up For Free</a>
             <p class="mt-5 mb-3 text-muted">© 2017-2019</p>
          </div>
     </form>
   </div>
+  <br><br>
+                <center>
+                <label>Usuario</label><br>   
+                <input type="text" id="usuario" data-username="moy"/><br>
+                <label >Contraseña</label><br>
+                <input type="password" id="contra" data-password="123" dataflag="1"/><br><br>
+                <input type="button"class="Registrar" value="Agregar usuario"/>
+                </center>
 
 </body>
 </html>

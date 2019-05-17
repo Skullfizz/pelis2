@@ -116,6 +116,13 @@ class moviesModel extends CI_Model {
         $this->db->where('id_peli',$idPelicula)
                  ->delete('favoritos');
     }
+
+    public function insertusu($usuario,$contra)
+    {
+        $this->db->set('Nombre',$usuario)
+                 ->set('password',$contra)
+                 ->insert('usuario');
+    }
 }
 
 /* End of file moviesModel.php */

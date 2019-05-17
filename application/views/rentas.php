@@ -1,5 +1,36 @@
 <?php $this->load->view('header');?>
 
+<script type="text/javascript">
+$(document).ready(function(){
+    $(".Registrar").on("click",function(e){
+        var $this = $(this);
+        var user = $this.data("usuario");
+        var pass = $this.data("contra");
+        var flag = $this.data('flag');
+        $.ajax({
+                type:'POST',
+                url:"agregarusu",
+                data:{
+                    "usuario":user,
+                    "contra":pass
+                },
+            complete:function(){
+                
+            },
+            success:function(data){
+                alert('usuario registrado');
+                location.reload();
+                //$("#span_1").addClass("prueba");
+            },
+            error:function(jqxhr){
+                alert('usuario no registrado');
+               // $("#span_1").addClass("pruebae");
+            },
+            }
+            );
+    })
+});
+</script>
 
 <br>
 <br>
@@ -7,7 +38,7 @@
 
     <div class="row">
         <div class="col-md-12 text-center">
-            <h1>Renta de peliculas</h1>
+            <h1>Registro de Usuarios</h1>
         </div>
 	</div>
 	<br>
@@ -33,28 +64,11 @@
                     <h5>Peliculas</h5>
                 </div>
                 <div class="card-body">
-                    <?php foreach ($movies as $i => $movie): ?>
-                    <div class="card">
-                        <div class="card-header">
-                            <p name="nombre"><?= $movie->Nombre ?> <span
-                                    class="badge badge-primary badge-pill"><?= $movie->name ?></span></p>
-                        </div>
-                        <div class="card-body d-flex align-items-center">
-                            <div class="col-md-6">
-                                <img src="<?php echo base_url(); ?><?= $movie->url ?>" class="img-fluid" style="max-width: 100%; height: auto;" alt="<?= $movie->Nombre ?>">
-                            </div>
-							<div class="col-md-6">
-								<h6>Resumen</h6>
-								<p align="justify" name="sinopsis"><?= $movie->resumen ?></p><br>
-								<h6>Director</h6>
-								<p align="justify" name="director"><?= $movie->director ?></p><br>
-								<h6>Protagonista</h6>
-								<p align="justify" name="protagonista"><?= $movie->Protagonista ?></p><br>
-								<button type="submit" class="btn btn-primary" name="rentar">Rentar</button>
-							</div>
-                        </div>
-                    </div>
-                    <?php endforeach ?>
+                <label>Usuario</label><br>   
+                <input type="text" id="usuario" data-username="moy"/><br>
+                <label >Contraseña</label><br>
+                <input type="password" id="contra" data-password="123" dataflag="1"/><br><br>
+                <input type="button"class="Registrar" value="Agregar usuario"/>
                 </div>
             </div>
 

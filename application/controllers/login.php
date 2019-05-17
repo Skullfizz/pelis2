@@ -123,6 +123,10 @@ class login extends CI_Controller {
         }*/
     }
 
+    public function ver(){
+        $this->load->view('rentas');
+    }
+
     public function eliminar_renta($idusuario)
     {
         $id_peli = $this->input->post('idpeli');
@@ -136,5 +140,11 @@ class login extends CI_Controller {
         $id_peli = $this->input->post('idpeli');
 
         $this->moviesModel->delete_fav($id_peli);
+    }
+
+    public function agregarusu($usuario,$contra){
+        $usuario = $this->input->post('usuario');
+        $contra = $this->input-post('contra');
+        $this->moviesModel->insertusu($usuario,md5($contra));
     }
 }

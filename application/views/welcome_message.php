@@ -160,7 +160,7 @@ $(document).ready(function(){
                     style="max-width: 100%; height: auto;" alt="<?= $favorito->Nombre ?>">
                 <!--<input type="image" class="eliminarFav" data-idpeli="<?= $favorito->id_peli?>" src="<?= base_url();?>/static/img/icons/png/icons8-eliminar-26.png" width="100" height="30">-->
             </div>
-
+            <input type="button" class="eliminarFav" data-idpeli="<?= $favorito->id_peli?>"value="Quitar de Favoritos">
             <?php endforeach ?>
 
 
@@ -211,11 +211,12 @@ $(document).ready(function(){
                 </div>
                 <?php foreach ($rentas as $i => $renta): ?>
                 <div class="card-body d-flex align-items-center">
-                    <p><?=$renta->Nombre;?></p>
+                    <!--<p><?=$renta->Nombre;?></p>-->
                     <img src="<?= base_url();?><?=$renta->url?>" class="img-fluid"
                         style="max-width: 50%; height: auto;">
                    <!-- <input type="image" data-idpeli="<?=$renta->id_pelicula;?>" data-idusuario="<?=$usuario[0]->id_usuario;?>" class="Eliminar" src="<?= base_url();?>/static/img/icons/png/icons8-eliminar-26.png" width="100" height="30">-->
                 </div>
+                <p><?=$renta->Nombre;?></p>
                 <input type="button" data-idpeli="<?=$renta->id_pelicula;?>" data-idusuario="<?=$usuario[0]->id_usuario;?>" class="Eliminar" value="Borrar">
                 <?php endforeach ?>
             </div>
