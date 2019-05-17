@@ -160,7 +160,6 @@ $(document).ready(function(){
                     style="max-width: 100%; height: auto;" alt="<?= $favorito->Nombre ?>">
                 <!--<input type="image" class="eliminarFav" data-idpeli="<?= $favorito->id_peli?>" src="<?= base_url();?>/static/img/icons/png/icons8-eliminar-26.png" width="100" height="30">-->
             </div>
-            <input type="button" class="eliminarFav" data-idpeli="<?= $favorito->id_peli?>"value="Quitar de Favoritas">
 
             <?php endforeach ?>
 
