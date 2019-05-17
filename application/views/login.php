@@ -11,7 +11,7 @@
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript"></script>
   <script>
   $(document).ready(function(){
-      $(".Registrar").on("click",function(e){
+      $("#btn-ingresar").on("click",function(e){
           var $this = $(this);
           var user = $this.data("usuario");
           var pass = $this.data("contra");
@@ -19,13 +19,7 @@
           $.ajax({
                   type:'POST',
                   url:"index.php/login/agregarusu",
-                  data:{
-                      "usuario":user,
-                      "contra":pass
-                  },
-              complete:function(){
-                
-              },
+                  data:$("#formulario").serialize(),
               success:function(data){
                   alert('usuario registrado');
                   
@@ -74,11 +68,11 @@
   </div>
   <br><br>
                 <center>
-                <label>Usuario</label><br>   
-                <input type="text" name="usu" id="usuario" data-username="bb"/><br>
-                <label >Contraseña</label><br>
-                <input type="password" id="contra" name="con" data-password="123" dataflag="1"/><br><br>
-                <input type="button" class="Registrar" name="ingresar" data-usuario="jose jose" data-contra="123" value="Agregar usuario"/>
+                <form method="post" id="formulario">
+                <input type="text" name="usuario" placeholder="Usuario" autofocus/>
+                <input type="password" name="contrasena" placeholder="Contraseña"/>
+                <input type="button" id="btn-ingresar" value="Ingresar" />
+                </form>
                 </center>
 
                             
