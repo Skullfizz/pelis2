@@ -68,7 +68,6 @@ $(document).ready(function(){
             },
             success:function(data){
                 //alert('Ya se encuentra en Favoritos');
-                location.reload();
             },
             error:function(jqxhr){
                 
@@ -132,7 +131,7 @@ $(document).ready(function(){
 
 <div class="row">
     <div class="col-md-12 text-center">
-        <h1>Bienvenidos a...putoss</h1>
+        <h1>Bienvenidos a...</h1>
     </div>
 </div>
 <br>
@@ -159,8 +158,9 @@ $(document).ready(function(){
             <div class="card-body d-flex align-items-center">
                 <img src="<?php echo base_url(); ?><?= $favorito->url ?>" class="img-fluid"
                     style="max-width: 100%; height: auto;" alt="<?= $favorito->Nombre ?>">
-                <input type="image" class="eliminarFav" data-idpeli="<?= $favorito->id_peli?>" src="<?= base_url();?>/static/img/icons/png/icons8-eliminar-26.png" width="100" height="30">
+                <!--<input type="image" class="eliminarFav" data-idpeli="<?= $favorito->id_peli?>" src="<?= base_url();?>/static/img/icons/png/icons8-eliminar-26.png" width="100" height="30">-->
             </div>
+            <input type="button" class="eliminarFav" data-idpeli="<?= $favorito->id_peli?>"value="Quitar de Favoritas">
 
             <?php endforeach ?>
 

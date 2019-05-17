@@ -103,8 +103,10 @@ class login extends CI_Controller {
         //Obtener todas las peliculas favoritas de la bd
         $favoritos = $this->moviesModel->getFavoritos();
 
+        $this->moviesModel->insertarFavorito($id_peli,$nombre_peli,$id_categoria,$director,
+            $Protagonista,$resumen,$url);
         //Hacer la insersión de la tupla a la tabla favoritos
-        foreach($favoritos as $favorito) {
+        /*foreach($favoritos as $favorito) {
             if($favorito != null) {
                 if($favorito->id_peli == $this->input->post('idpeli')) {
                     //La película ya está rentada
@@ -118,7 +120,7 @@ class login extends CI_Controller {
             $Protagonista,$resumen,$url);
             }
             break;
-        }
+        }*/
     }
 
     public function eliminar_renta($idusuario)
