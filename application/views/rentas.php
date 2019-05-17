@@ -1,6 +1,6 @@
 <?php $this->load->view('header');?>
 
-<script type="text/javascript">
+<script  type="text/javascript">
 $(document).ready(function(){
     $(".Registrar").on("click",function(e){
         var $this = $(this);
@@ -9,7 +9,7 @@ $(document).ready(function(){
         var flag = $this.data('flag');
         $.ajax({
                 type:'POST',
-                url:"agregarusu",
+                url:"login/agregarusu/",
                 data:{
                     "usuario":user,
                     "contra":pass

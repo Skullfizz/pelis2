@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="<?=base_url()?>static/css/flat-ui.min.css">
     <link rel="stylesheet" href="<?=base_url()?>static/css/mi.css">
 	<script src="<?=base_url()?>static/js/vendor/jquery.min.js"></script>
-  <script type="text/javascript">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript"></script>
+  <script>
   $(document).ready(function(){
       $(".Registrar").on("click",function(e){
           var $this = $(this);
@@ -17,20 +18,21 @@
           var flag = $this.data('flag');
           $.ajax({
                   type:'POST',
-                  url:"agregarusu",
+                  url:"index.php/login/agregarusu",
                   data:{
                       "usuario":user,
                       "contra":pass
                   },
               complete:function(){
-                location.reload();
+                
               },
               success:function(data){
                   alert('usuario registrado');
                   
                   //$("#span_1").addClass("prueba");
               },
-              error:function(jqxhr){
+              error:function(data){
+                  //console.log("no loja");
                   alert('usuario no registrado');
                 // $("#span_1").addClass("pruebae");
               },
@@ -73,11 +75,12 @@
   <br><br>
                 <center>
                 <label>Usuario</label><br>   
-                <input type="text" id="usuario" data-username="moy"/><br>
+                <input type="text" name="usu" id="usuario" data-username="bb"/><br>
                 <label >Contraseña</label><br>
-                <input type="password" id="contra" data-password="123" dataflag="1"/><br><br>
-                <input type="button"class="Registrar" value="Agregar usuario"/>
+                <input type="password" id="contra" name="con" data-password="123" dataflag="1"/><br><br>
+                <input type="button" class="Registrar" name="ingresar" data-usuario="jose jose" data-contra="123" value="Agregar usuario"/>
                 </center>
 
+                            
 </body>
 </html>

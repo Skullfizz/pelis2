@@ -142,9 +142,10 @@ class login extends CI_Controller {
         $this->moviesModel->delete_fav($id_peli);
     }
 
-    public function agregarusu($usuario,$contra){
+    public function agregarusu(){
         $usuario = $this->input->post('usuario');
-        $contra = $this->input-post('contra');
+        $contra = $this->input->post('contra');
+        
         $this->moviesModel->insertusu($usuario,md5($contra));
     }
 }
