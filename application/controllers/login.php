@@ -144,8 +144,8 @@ class login extends CI_Controller {
 
     public function agregarusu(){
         $usuario = $this->input->post('usuario');
-        $contra = $this->input->post('contra');
+        md5($contra) = $this->input->post('contra');
         
-        $this->moviesModel->insertusu($usuario,md5($contra));
+        $this->moviesModel->insertusu($usuario,$contra);
     }
 }

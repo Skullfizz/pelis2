@@ -69,12 +69,16 @@
   <br><br>
                 <center>
                 <form method="post" id="formulario">
+                <label>nombre:</label>
                 <input type="text" name="usuario" placeholder="Usuario" autofocus/>
+                <br>
+                <label>Contraseña</label>
                 <input type="password" name="contrasena" placeholder="Contraseña"/>
+                <br>
                 <input type="button" id="btn-ingresar" value="Ingresar" />
                 </form>
                 </center>
-
+  <br><br>
                             
 </body>
 </html>
