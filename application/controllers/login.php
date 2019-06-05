@@ -123,6 +123,13 @@ class login extends CI_Controller {
         }*/
     }
 
+    public function modif(){
+        $id_peli = $this->input->post('idpeli');
+        $nombre_peli = 'marco';
+        $director='tomas';             
+        $this->moviesModel->modifica($id_peli,$nombre_peli,$director);
+    }
+
     public function ver(){
         $this->load->view('rentas');
     }
@@ -144,8 +151,8 @@ class login extends CI_Controller {
 
     public function agregarusu(){
         $usuario = $this->input->post('usuario');
-        md5($contra) = $this->input->post('contra');
+        $contra = $this->input->post('contra');
         
-        $this->moviesModel->insertusu($usuario,$contra);
+        $this->moviesModel->insertusu($usuario,md5($contra));
     }
 }

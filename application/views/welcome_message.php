@@ -124,6 +124,32 @@ $(document).ready(function(){
             );
     })
 });
+
+$(document).ready(function(){
+    $(".btnModificar").on("click",function(e){
+        var $this = $(this);
+        var idpeli = $this.data("idpeli");
+        $.ajax({
+            type:'POST',
+            url:"login/modif/",
+                data:{
+                    "idpeli":idpeli
+                },
+            complete:function(){
+            },
+            success:function(data){
+                //alert('Ya se encuentra en Favoritos');
+                location.reload();
+            },
+            error:function(jqxhr){
+                
+            },
+            }
+            );
+    })
+});
+
+
 </script>
 <br>
 <br>
@@ -195,6 +221,8 @@ $(document).ready(function(){
                             <input type="text" id="protagonista" name="protagonista" actor="<?=$movie->Protagonista;?>" style="display:none"; /><br>
                             <input type="button" class="btnRentar btn btn-primary" name="Rentar" data-idpeli="<?=$movie->id_peli;?>" data-nompeli="<?=$movie->Nombre;?>" value="Rentar" />
                             <input type="button" class="btnFavorito btn btn-primary" name="agregar_fav" data-idpeli="<?=$movie->id_peli;?>" data-nompeli="<?=$movie->Nombre;?>" data-idcateg="<?=$movie->id_categoria?>" data-director="<?=$movie->director?>" data-protagonista="<?=$movie->Protagonista?>" data-resumen="<?=$movie->resumen?>" data-url="<?=$movie->url?>" value="Agregar Fav." />
+                            
+                            <input type="button" class="btnModificar btn btn-primary" name="Modificar"  data-idpeli="<?=$movie->id_peli;?>" value="modificar"/>
                             <span id="span_<?=$movie->id_peli;?>" name="<?=$movie->id_peli?>">Bien</span>
                         </div>
                     </div>

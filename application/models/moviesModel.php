@@ -104,6 +104,15 @@ class moviesModel extends CI_Model {
                  ->insert('favoritos');
     }
 
+    public function modifica($id_peli,$nombre,$director){
+        $this->db->set('Nombre',$nombre)        
+                 ->set('director',$director)
+                 ->where('id_peli',$id_peli)
+                 ->update('pelis');
+
+    }
+
+
     public function delete_renta($idusuario, $idpelicula)
     {
         $this->db->where('id_pelicula',$idpelicula)
