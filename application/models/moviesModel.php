@@ -111,6 +111,11 @@ class moviesModel extends CI_Model {
                  ->update('pelis');
 
     }
+    public function eliminar($id_peli){
+        $this->db->where('id_peli',$id_peli)
+                 ->delete('pelis');
+
+    }
 
 
     public function delete_renta($idusuario, $idpelicula)

@@ -129,6 +129,12 @@ class login extends CI_Controller {
         $director='tomas';             
         $this->moviesModel->modifica($id_peli,$nombre_peli,$director);
     }
+    
+    public function elimi(){
+        $id_peli = $this->input->post('idpeli');
+        $this->moviesModel->eliminar($id_peli);
+    }
+
 
     public function ver(){
         $this->load->view('rentas');
